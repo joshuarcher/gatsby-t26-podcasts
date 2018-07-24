@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/gatsby-t26-podcasts',
   siteMetadata: {
     title: `Gatsby Default Starter`,
   },

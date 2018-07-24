@@ -36,6 +36,7 @@ class PodcastList extends Component {
 
   componentDidMount() {
     let parser = new Parser();
+
     (async () => {
 
       let feed = await parser.parseURL('https://tower26radio.libsyn.com/rss');
@@ -45,7 +46,7 @@ class PodcastList extends Component {
       this.setState({
         title: feed.title,
         podcasts: feed.items
-      })
+      });
     })();
   }
 
