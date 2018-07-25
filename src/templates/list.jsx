@@ -48,44 +48,10 @@ class PodcastList extends Component {
       podcasts: feed.items,
       term: this.state.term
     });
-    {/*
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = () => {
-      if (request.readyState == 4 && request.status == 200) {
-        var parseString = require('xml2js').parseString;
-        parseString(request.responseText, function (err, result) {
-
-          let parser = new Parser();
-          parser.parseString(result, function (err, feed) {
-            console.log(err);
-            console.log(feed);
-          })
-        });
-
-      }
-    }
-
-    request.open("GET", "https://tower26radio.libsyn.com/rss");
-    request.send();*/}
   }
 
   componentDidMount() {
-
-
     {this.FetchDataFromRSSFeed()}
-    {/*}
-    let parser = new Parser();
-
-    let feed = await parser.parseURL('https://tower26radio.libsyn.com/rss');
-
-    console.log(feed.title);
-    console.log(feed.items);
-
-    this.setState({
-      title: feed.title,
-      podcasts: feed.items,
-      term: this.state.term
-    });*/}
   }
 
   render() {
