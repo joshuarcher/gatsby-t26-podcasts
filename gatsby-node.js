@@ -41,7 +41,7 @@ function createBlogPages({ boundActionCreators, graphql }) {
 
 function createArchivePages({ boundActionCreators, graphql }) {
   const { createPage } = boundActionCreators;
-  const listTemplate = path.resolve(`src/templates/list.js`);
+  const listTemplate = path.resolve(`src/templates/list.jsx`);
 
   return graphql(blogPostQuery)
     .then(result => {
@@ -51,7 +51,7 @@ function createArchivePages({ boundActionCreators, graphql }) {
 
       const articlesPerMonth = result.data.allMarkdownRemark.edges
         .reduce((months, { node }) => {
-          const previousArticlesPerMonth = months[node.frontmatter.date]; 
+          const previousArticlesPerMonth = months[node.frontmatter.date];
           months[node.frontmatter.date] = previousArticlesPerMonth ? [...previousArticlesPerMonth, node] : [node];
           return months;
         }, {})
