@@ -33,60 +33,65 @@ class PodcastList extends Component {
     })
   }
 
-  async FetchDataFromRSSFeed() {
+  FetchDataFromRSSFeed() {
 
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = () => {
-      if (request.readyState == 4 && request.status == 200) {
+    return new Promise( resolve => {
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = () => {
+        if (request.readyState == 4 && request.status == 200) {
 
-        var domParser = new DOMParser();
-        var xmlDoc = domParser.parseFromString(request.responseText, 'text/xml');
+          var domParser = new DOMParser();
+          var xmlDoc = domParser.parseFromString(request.responseText, 'text/xml');
 
-        var items = xmlDoc.getElementsByTagName('item');
-        var _podcasts = [];
-        for(var i = 0; i < items.length; i += 1)
-        {
-          var item = items[i];
-          var title, date, description, subtitle, duration, type, url, subtitle;
-          console.log(item);
-          for(var c = 0; c < item.children.length; c += 1)
-		      {
-            var child = item.children[c];
-            var child = item.children[c];
-			      if(child.tagName == "title") title = child.textContent;
-			      else if(child.tagName == "pubDate") date = child.textContent;
-			      else if(child.tagName == "description")
-			      {
-				      description = child.textContent;
-			      }
-			      else if(child.tagName == "subtitle") subtitle = child.textContent;
-			      else if(child.tagName == "itunes:subtitle") subtitle = child.textContent;
-			      else if(child.tagName == "itunes:duration") duration = child.textContent;
-			      else if(child.tagName == "enclosure")
-			      {
+          var items = xmlDoc.getElementsByTagName('item');
+          var _podcasts = [];
+          for(var i = 0; i < items.length; i += 1)
+          {
+            var item = items[i];
+            var title, date, description, subtitle, duration, type, url, subtitle;
+            for(var c = 0; c < item.children.length; c += 1)
+  		      {
+              var child = item.children[c];
+              var child = item.children[c];
+  			      if(child.tagName == "title") title = child.textContent;
+  			      else if(child.tagName == "pubDate") date = child.textContent;
+  			      else if(child.tagName == "description")
+  			      {
+  				      description = child.textContent;
+  			      }
+  			      else if(child.tagName == "subtitle") subtitle = child.textContent;
+  			      else if(child.tagName == "itunes:subtitle") subtitle = child.textContent;
+  			      else if(child.tagName == "itunes:duration") duration = child.textContent;
+  			      else if(child.tagName == "enclosure")
+  			      {
 
-				      type = child.getAttribute("type");
-				      url = child.getAttribute("url");
-			      }
+  				      type = child.getAttribute("type");
+  				      url = child.getAttribute("url");
+  			      }
+            }
+
+            _podcasts[i] = { index: i, url: url, title: title, subtitle: subtitle, pubDate: date, duration: duration, description: description };
           }
-          console.log(description);
-          _podcasts[i] = { index: i, url: url, title: title, subtitle: subtitle, pubDate: date, duration: duration, description: description };
+
+          resolve(_podcasts);
         }
-
-        this.setState({
-          title: this.state.title,
-          podcasts: _podcasts,
-          term: this.state.term
-        })
       }
-    }
 
-    request.open("GET", "https://tower26radio.libsyn.com/rss");
-    request.send();
+      request.open("GET", "https://tower26radio.libsyn.com/rss");
+      request.send();
+    });
+
   }
 
   componentDidMount() {
-    {this.FetchDataFromRSSFeed()}
+    this.FetchDataFromRSSFeed()
+      .then(podcasts => {
+        this.setState({
+          title: this.state.title,
+          podcasts: podcasts,
+          term: this.state.term
+        })
+      });
   }
 
   render() {
