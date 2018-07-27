@@ -6,9 +6,13 @@ import './css/list.scss';
 
 function searchingFor(term) {
   return function(x) {
-    return x.title.toLowerCase().includes(term.toLowerCase()) ||
-      x.description.toLowerCase().includes(term.toLowerCase()) ||
-     !term;
+    var terms = term.trim().split(" ");
+    var isRelatedToPodcast = !term;
+    terms.forEach(function(word) {
+      isRelatedToPodcast = x.title.toLowerCase().includes(word.toLowerCase()) ||
+        x.description.toLowerCase().includes(word.toLowerCase())
+    });
+    return isRelatedToPodcast
   }
 }
 
