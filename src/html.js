@@ -30,7 +30,6 @@ export default class HTML extends React.Component {
           />
           <link rel="shortcut icon" href="http://tower26.com/wp-content/themes/tower26/images/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no" />
-          <link href="/libs/Oswald.css" rel="stylesheet" />
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
           <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300,400" rel="stylesheet" type="text/css" />

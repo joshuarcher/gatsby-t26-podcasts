@@ -1,0 +1,72 @@
+.section-main {
+	height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.center-container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.logo
+{
+	background: url(../../media/t26-logo.png) no-repeat center;
+	background-size: contain;
+	width: auto;
+	height: 15vh;
+}
+
+.logo-subtitle
+{
+	font-family: "tower26";
+	letter-spacing: 2px;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+.social
+{
+	display: flex;
+	color: white;
+	font-size: 20px;
+	justify-content: center;
+	position: absolute;
+	bottom: 80px;
+	width: 100%;
+}
+.social-link { margin: 4px 20px; color: white !important; cursor: pointer; opacity: 0.5;}
+.social-link:hover { opacity: 1; color: white;}
+
+.scroll-section .center-container
+{
+	height: auto;
+}
+
+.main-menu
+{
+  text-align: center;
+	padding-top: 16px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+@media (max-width: 560px) {
+  .button { margin: 6px 0px; }
+  .main-menu .button { width: 100%; margin: 6px 8px; }
+}
