@@ -13,8 +13,8 @@
       "path---first-60375db5b52d0acb82df.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-84151b02d212d68427b2.js",
-      "component---src-layouts-index-js-84151b02d212d68427b2.js.map"
+      "component---src-layouts-index-js-8d92c176a80e72c56c88.js",
+      "component---src-layouts-index-js-8d92c176a80e72c56c88.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
@@ -25,8 +25,8 @@
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
     ],
     "commons": [
-      "commons-ba4cb63d6a7a0250cd9f.js",
-      "commons-ba4cb63d6a7a0250cd9f.js.map"
+      "commons-4a609cd1349a6e5bd236.js",
+      "commons-4a609cd1349a6e5bd236.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
@@ -37,14 +37,12 @@
       "component---src-templates-post-js-e183bc4f8cb12032a3e7.js.map"
     ],
     "component---src-pages-index-jsx": [
-      "component---src-pages-index-jsx-61e0718a63f9875b6f62.js",
-      "component---src-pages-index-jsx-61e0718a63f9875b6f62.js.map"
+      "component---src-pages-index-jsx-9775bfa56ecda69fc3f2.js",
+      "component---src-pages-index-jsx-9775bfa56ecda69fc3f2.js.map"
     ],
     "app": [
       "app-2e2825c16ccc6d15981e.js",
-      "build-js-styles.css",
-      "app-2e2825c16ccc6d15981e.js.map",
-      "build-js-styles.css.map"
+      "app-2e2825c16ccc6d15981e.js.map"
     ],
     "component---src-templates-list-jsx": [
       "component---src-templates-list-jsx-114a47ab9ac7e1a362fb.js",
