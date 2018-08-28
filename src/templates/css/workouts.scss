@@ -1,0 +1,125 @@
+.workout-groups {
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+}
+
+.workout-group {
+	border: solid 1px rgba(255,255,255,0.8);
+	margin: 10px;
+	width: 290px;
+	display: flex;
+	flex-direction: column;
+}
+
+.workout-group-title, .about-title {
+	background-color: rgba(255,255,255,0.1);
+	border-bottom: solid 1px rgba(255,255,255,0.8);
+	padding: 20px 0 0 0;
+	text-align: center;
+	font-weight: bold;
+}
+.workout-group-title { padding: 20px; }
+
+.workout-group-desc, .about-desc {
+	flex-grow: 1;
+	padding: 20px;
+}
+
+.about {
+	justify-content: center;
+}
+
+.about-group {
+	border: 0;
+	margin: 10px 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.about-title { background-color: inherit; border: 0; font-size: 24px; letter-spacing: 1px; font-weight: inherit;}
+
+.about-desc {
+	text-align: center;
+	font-size: 16px;
+	padding: 10px 0;
+}
+
+.workout-group-price {
+	border-top: solid 1px rgba(255,255,255,0.8);
+	padding: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.locations {
+	position: relative;
+}
+
+.location {
+	margin-top: 20px;
+	margin-bottom: 100px;
+	position: absolute;
+	width: 100%;
+}
+.location-subgroup
+{
+	background-color: #00000080;
+	padding: 20px 4px;
+	margin: 20px auto;
+	max-width: 1000px;
+}
+
+.location-subgroup iframe
+{
+	margin: 0 auto;
+	width: 100%;
+}
+
+.location-desc {
+	padding: 0px 24px;
+}
+
+.location-list
+{
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 20px auto;
+	max-width: 1000px;
+}
+
+.location-choice
+{
+	width: 20vw;
+	height: 20vw;
+	background-size: contain;
+	max-width: 150px;
+  max-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	font-size: 16px;
+  font-weight: bold;
+  color: white;
+	text-shadow: 0 0 4px rgba(0,0,0,1.0);
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: outline-color 0.2s ease-in;
+	-moz-transition: outline-color 0.2s ease-in;
+	-o-transition: outline-color 0.2s ease-in;
+	-ms-transition: outline-color 0.2s ease-in;
+	transition: outline-color 0.2s ease-in;
+	outline: solid 1px rgba(255,255,255,0.0);
+}
+.location-choice.selected, .location-choice:hover
+{
+	outline-color: rgba(255,255,255,0.8);
+}
+
+
+
+// .location-list .location-choice[index="0"] { background-image: url('pool.jpg'); }
+// .location-list .location-choice[index="1"] { background-image: url('beach.jpg'); }
+// .location-list .location-choice[index="2"] { background-image: url('track.jpg');}
+// .location-list .location-choice[index="3"] { background-image: url('triathlon.jpg'); }

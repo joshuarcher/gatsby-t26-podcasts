@@ -17,9 +17,9 @@ import back7 from './../media/backgroundImages/back7.jpg';
 const TemplateWrapper = ({ children }) => {
   return <div>
     <Helmet
-      title="Tower 26 Podcasts"
+      title="TOWER 26"
       meta={[
-        { name: 'description', content: 'Tower 26 Swimming Podcasts' },
+        { name: 'description', content: 'Tower 26 Swimming' },
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
