@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
 import Moment from 'moment';
+import CloseMenu from './closemenu';
 
 import './css/list.scss';
+import logo from './../media/t26-logo.png';
 
 function searchingFor(term) {
   return function(x) {
@@ -100,24 +101,29 @@ class PodcastList extends Component {
 
   render() {
     return(
-      <div>
-        <div>
-          <input id="blog-searchbar" type="text" onChange={this.searchHandler}/>
-        </div>
-        <div className="blog-posts">
-          <table><tbody>
-          {this.state.podcasts.filter(searchingFor(this.state.term)).map( pod =>
-              <tr key={pod.index}>
-                <td className="play"><i className="fas fa-play-circle"></i></td>{/*TODO: make component for playcircle*/}
-                <td>{pod.title}</td>
-                <td>{pod.subtitle}</td>
-                <td>{Moment(pod.pubDate).format('ll')}</td>
-                <td>{pod.duration}</td>
-                <td className="info"><i className="fas fa-info-circle"></i></td>{/*TODO: make component for infocircle*/}
-              </tr>
-          )}
-          </tbody></table>
-        </div>
+      <div className='scroll-section section-podcast section'>
+      	<div className='center-container'>
+      		<CloseMenu />
+      		<div className='title'>"BE RACE READY" Podcast</div>
+          <div className="podcast-list">
+            <input id="podcast-filter" type="search" placeholder="Search.." onChange={this.searchHandler}/>
+            <table id="podcast-table">
+              <tbody>
+              {this.state.podcasts.filter(searchingFor(this.state.term)).map( pod =>
+                  <tr key={pod.index}>
+                    <td className="play"><i className="fas fa-play-circle"></i></td>{/*TODO: make component for playcircle*/}
+                    <td>{pod.title}</td>
+                    <td>{pod.subtitle}</td>
+                    <td>{Moment(pod.pubDate).format('ll')}</td>
+                    <td>{pod.duration}</td>
+                    <td className="info"><i className="fas fa-info-circle"></i></td>{/*TODO: make component for infocircle*/}
+                  </tr>
+              )}
+              </tbody>
+            </table>
+          </div>
+
+      	</div>
       </div>
     )
   }

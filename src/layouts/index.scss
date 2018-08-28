@@ -5,7 +5,7 @@
  @font-face
  {
  	font-family: "tower26";
- 	src: url("/css/futura-webfont.woff") format('woff');
+ 	src: url("../media/futura-webfont.woff") format('woff');
  }
 
 
@@ -18,8 +18,8 @@
  	overflow:hidden;
  }
 
- body
- {
+body
+{
  	/*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
  	font-size: 14px;
  	color: #333;
@@ -31,10 +31,18 @@
  	font-family: 'Open Sans', sans-serif;
  }
 
- body.noscroll {
- 	/*position:fixed;*/
- 	overflow:hidden;
- }
+body.noscroll {
+	/*position:fixed;*/
+	overflow:hidden;
+}
+
+.row-center
+{
+	padding: 20px 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
 
 h1, .h1,
 h2, .h2,
@@ -91,6 +99,89 @@ h6, .h6 {
 	opacity: 1;
 }
 
+.link-button
+{
+	/*font-family: "tower26";*/
+	letter-spacing: 1px;
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	color: #FFF;
+	cursor: pointer;
+	background-color: #009fe3;
+    font-size: 20px;
+    font-weight: bold;
+	-webkit-transition: background-color 0.2s ease-in;
+	-moz-transition: background-color 0.2s ease-in;
+	-o-transition: background-color 0.2s ease-in;
+	-ms-transition: background-color 0.2s ease-in;
+	transition: background-color 0.2s ease-in;
+	text-decoration: none !important;
+}
+
+.link-button:visited
+{
+	color: inherit;
+}
+
+.link-button:hover
+{
+	color: #009fe3;
+	background-color: white;
+}
+
+.title
+{
+	font-family: "tower26";
+	font-size: 40px;
+	text-transform: uppercase;
+	margin: 40px 0;
+	text-align: center;
+	letter-spacing: 10px;
+	line-height: 40px;
+}
+
+.subtitle
+{
+	font-size: 30px;
+	text-transform: uppercase;
+	margin: 0;
+	text-align: center;
+	letter-spacing: 6px;
+	line-height: 30px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.address
+{
+	text-align: center;
+}
+
+.address a { color: rgba(255,255,255,0.8) !important; text-decoration: underline;}
+
+.info-middle { 	text-align: center; }
+
+.close-menu
+{
+    text-align: center;
+}
+
+.main-menu
+{
+  text-align: center;
+	padding-top: 16px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+@media (max-width: 560px) {
+  .button { margin: 6px 0px; }
+  .main-menu .button { width: 100%; margin: 6px 8px; }
+}
+
 /*
  * Override Bootstrap's default container.
  */
@@ -142,6 +233,54 @@ h6, .h6 {
   border-left: .3rem solid transparent;
 }
 
+.section-main {
+	height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.center-container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.scroll-section {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	min-height: 100%;
+	z-index: 4000;
+	left: 0px;
+	top: 0px;
+	/*display: none;
+	opacity: 0;*/
+	background-color: rgba(0,0,0,0.4);
+	/*padding-top: 80px;
+	padding-bottom: 80px;*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: rgba(255,255,255,0.8);
+	font-weight: 400;
+	line-height: 24px;
+	text-align: justify;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.scroll-section .center-container
+{
+	height: auto;
+}
 
 /*
  * Blog name and description

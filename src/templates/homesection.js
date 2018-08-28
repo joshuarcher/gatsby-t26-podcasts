@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './../media/t26-logo.png';
+import Link from "gatsby-link";
 
 import './css/homesection.scss';
 
@@ -11,8 +12,8 @@ class HomeSection extends Component {
       		<div className='logo'></div>
       		<div className='logo-subtitle'>Swimming & Triathlon Coaching</div>
       		<div className='main-menu'>
-      			<a className='button go-section' href="#podcasts" section='.section-podcast'>"BE RACE READY" Podcast</a>
-      			<a className='button go-section' href="#la" section='.section-pool'>Los Angeles Workouts</a>
+      			<Link className='button go-section' to="/podcasts/">"BE RACE READY" Podcast</Link>
+      			<Link className='button go-section' to="/workouts/">Los Angeles Workouts</Link>
       			<a className='button go-section' href="#online" section='.section-online'>Online Workouts</a>
       			<a className='button go-section' href="#coaches" section='.section-gerry'>Coaches</a>
       		</div>
